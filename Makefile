@@ -30,7 +30,7 @@ OPTIM = -O
 LEXOPTS = -t
 LDFLAGS = $(DEBUG)
 CFLAGS = $(OPTIM) $(DEBUG) #-Wall
-LIBS = -ll
+LIBS = -lfl
 
 all: mcstrip cyclo
 
