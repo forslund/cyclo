@@ -10,7 +10,7 @@
  * but it's better now.
  */
 #include "strerror.h"
-
+#include <string.h>
 char *strerror(err)
      int err;
 {
