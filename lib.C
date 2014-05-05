@@ -14,31 +14,14 @@ use that the user idemnifies the University against any claim (including
 third party claims) arising therefrom.
 
 */
-
+using namespace std;
 #include <stdlib.h>
-#include <iostream.h>
+#include <iostream>
 #include <string.h>
 #include "lib.h"
 
 extern "C" // called from 'C' scan.c
 {
-
-char *strndup(char *str, int n)
-{
-	char *t, *t2;
-	t2=t=(char *)malloc(n+1*sizeof(char));
-	if(!t) { cerr << "Out of memory in " << __FILE__ << " line " << __LINE__ << "\n"; exit(1);}
-
-	while(n && str)
-	{
-		*t2=*str;
-		n--;
-		str++;
-		t2++;
-	}
-	*t2=0;
-	return t;
-}
 
 char *getfunc(char *str, int n)
 {
