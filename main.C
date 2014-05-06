@@ -15,9 +15,10 @@ third party claims) arising therefrom.
 
 */
 
-#include <iostream.h>
+using namespace std;
+#include <iostream>
 #include <stdio.h>
-#include <iomanip.h>
+#include <iomanip>
 #include <stdlib.h>
 #include <string.h>
 
