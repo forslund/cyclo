@@ -11,6 +11,8 @@
  */
 #include "strerror.h"
 #include <string.h>
+#include <stdio.h>
+
 char *strerror(err)
      int err;
 {
