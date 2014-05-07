@@ -49,8 +49,8 @@ cyclo: main.o scan.o lib.o
 	$(CCPLUS) $(LDFLAGS) -o $@ main.o scan.o lib.o $(LIBS)
 
 main.o: main.C $(HEADERS)
-	#$(CCPLUS) $(CFLAGS) -DNEEDGETOPTDEFS -c main.C
-	$(CCPLUS) $(CFLAGS) -c main.C
+	$(CCPLUS) $(CFLAGS) -DNEEDGETOPTDEFS -c main.C
+	#$(CCPLUS) $(CFLAGS) -c main.C
 
 lib.o: lib.C $(HEADERS)
 	$(CCPLUS) $(CFLAGS) -c lib.C
