@@ -167,7 +167,9 @@ static int rd_continue(int parse, int startat, Info &jumps);
 /* what to do if a rd_* function returns an error */
 #define check(x)  {end=(x); if (end<-1) return end;}
 /* macro to handle parse error */
-#define PARSEFAIL(m,x)  { parsefail(m,x); return -10;}
+#define PARSEFAIL(m,x)  {\
+       parsefail((char *)m,x); \
+	return -10;}
 
 void parsefail(char *msg, int at)
 {
@@ -802,7 +804,7 @@ cyclo (void)
 
   x=rd_buffer(1, 0, i);
   if(x>=0 && x<tokenlist.Count())
-    parsefail("Unexpected token at top level", x);
+    parsefail((char *)"Unexpected token at top level", x);
   if(x!=tokenlist.Count()) exit(1);
 }
 
@@ -1221,7 +1223,7 @@ main (int argc, char *argv[])
   int plt=0, funcs=0, pft=0, ps=0, psd=0,fnno=0, complex=0;
   float scale=1;
 
-  while(0<=(c=getopt(argc, argv, "lfFtn:ps:cdi")))
+  while(0<=(c=getopt(argc, argv, (char *)"lfFtn:ps:cdi")))
      switch(c)
      {
      case 'c':  complex=1; break;
