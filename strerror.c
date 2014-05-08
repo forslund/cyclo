@@ -13,6 +13,7 @@
 #include <string.h>
 #include <stdio.h>
 
+#if defined(__CYGWIN__) && !defined(_WIN32)
 char *strerror(err)
      int err;
 {
@@ -29,7 +30,7 @@ char *strerror(err)
 
   return errmsg;
 }
-
+#endif
   
 #if 0
 char *
